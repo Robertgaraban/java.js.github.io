@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+ 
+<script>
+
+    function pessoa (
+        nome,
+        idade,
+       /* cor,
+        endereço,
+        casado,
+        filhos,*/
+    )
+
+        {
+            this.nome = nome
+            this.idade = idade
+            /*this.cor = cor
+            this.endereço = endereço
+            this.casado = casado
+            this.filhos = filhos*/
+
+        }
+
+
+
+
+</script>
+ 
+</head>
+<body>
+
+    <br><br><br><br><br>
+    <div>
+        <label>nome</label>
+        <input type="text" name="nome" placeholder="Digite sua Nome" value="nome"></input>
+        <label>idade</label>
+        <input type="Number" name="idade" placeholder="Digite sua Idade" value="idade"></input>
+        <input type="submit" name="btn-enviar" value="Enviar"> </input>
+
+    </div>
+
+
+    <script>
+
+
+        function Pessoa(nome, idade) {
+            this.nome = nome
+            this.idade = idade
+            // ...
+        }
+
+        function verificaMaisVelho(pessoas) {
+            let maiorIdade;  // undefined
+            let pessoaMaisVelha;
+
+            for (let pessoa of pessoas) {
+                if (typeof maiorIdade == 'undefined') {
+                    maiorIdade = pessoa.idade
+                    pessoaMaisVelha = pessoa
+                } else {
+                    if (pessoa.idade > maiorIdade) {
+                        maiorIdade = pessoa.idade
+                        pessoaMaisVelha = pessoa
+                    }
+                }
+            }
+
+            return pessoaMaisVelha
+        }
+
+        // function checaCoresFavoritas()
+
+        function listaRegistros(registros) {
+            // for (let registro of registros) {
+
+            // }
+            console.log('Esses são os registros que foram feitos:')
+            registros.forEach( registro => {
+                console.log(`${registro.nome} possui ${registro.idade} anos`)
+            } )
+        }
+
+        let registros = []
+
+
+
+        while (true) {
+            
+            
+            //pega os dados
+            
+            //let nome = prompt("Digite o nome")
+            //let idade = prompt("Digite a idade")
+            idade = Number(idade)
+
+            // cria o registro
+            let pessoa = new Pessoa(nome, idade)
+
+            // guarda o registro
+            registros.push(pessoa)
+
+            let resposta = prompt("Deseja registrar outra pessoa? ")
+            if (resposta == 'N' || resposta == 'NÃO' || resposta == 'n' || resposta == 'não') {
+                break;
+            }
+        }
+
+
+        listaRegistros(registros)
+        let maisVelho = verificaMaisVelho(registros)
+        console.log(`A pessoa mais velha é ${maisVelho.nome} com ${maisVelho.idade} anos`)
+        console.log(`${resgitro}`)
+
+    </script>
+        
+
+
+</body>
+</html>
